@@ -14,3 +14,5 @@ When I’m not coding, you’ll find me:
 I speak **English and French**, so feel free to reach out in either!
 
 Let’s connect, collaborate, and create something awesome. 💬  
+
+![Sajana's GitHub stats](https://github-readme-stats.vercel.app/api?username=StormKing969&show_icons=true&theme=radical)
