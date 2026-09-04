@@ -4,17 +4,18 @@
   <meta charset="UTF-8" />
   <title>Sajana Wijesinghe – Software Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     :root {
-      --bg: #050816;
-      --bg-alt: #0b1020;
-      --accent: #4f46e5;
-      --accent-soft: rgba(79, 70, 229, 0.15);
-      --text: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border: #1f2937;
-      --card-bg: #0b1020;
-      --shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      --bg: #0b0b14;
+      --bg-alt: #12121f;
+      --accent: #9b8cff; /* soft violet */
+      --accent-soft: rgba(155, 140, 255, 0.18);
+      --text: #e6e6f2;
+      --text-muted: #a3a3c2;
+      --border: #2a2a3d;
+      --card-bg: #141422;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
       --radius-lg: 18px;
       --radius-md: 12px;
       --radius-sm: 8px;
@@ -29,7 +30,12 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
         "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+      background: radial-gradient(
+        circle at top,
+        #1a1a2e 0%,
+        #0d0d18 45%,
+        #000 100%
+      );
       color: var(--text);
       line-height: 1.6;
       padding: 32px 16px 48px;
@@ -40,9 +46,13 @@
     .container {
       width: 100%;
       max-width: 960px;
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(3, 7, 18, 0.98));
+      background: linear-gradient(
+        145deg,
+        rgba(22, 22, 36, 0.92),
+        rgba(12, 12, 24, 0.96)
+      );
       border-radius: 24px;
-      border: 1px solid rgba(148, 163, 184, 0.18);
+      border: 1px solid rgba(155, 140, 255, 0.22);
       box-shadow: var(--shadow);
       padding: 28px 22px 32px;
       backdrop-filter: blur(18px);
@@ -110,8 +120,8 @@
       font-size: 0.8rem;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(155, 140, 255, 0.35);
+      background: rgba(20, 20, 35, 0.9);
       color: var(--text-muted);
     }
 
@@ -127,8 +137,8 @@
       gap: 6px;
       padding: 8px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(155, 140, 255, 0.45);
+      background: rgba(20, 20, 35, 0.9);
       color: var(--text);
       font-size: 0.85rem;
       text-decoration: none;
@@ -136,23 +146,19 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      background: linear-gradient(135deg, #9b8cff, #b3a6ff);
       border-color: transparent;
-      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45);
-    }
-
-    .btn span.icon {
-      font-size: 1rem;
+      box-shadow: 0 12px 30px rgba(155, 140, 255, 0.35);
     }
 
     .btn:hover {
       transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.7);
-      border-color: rgba(148, 163, 184, 0.7);
+      border-color: rgba(155, 140, 255, 0.55);
+      box-shadow: 0 12px 26px rgba(20, 20, 35, 0.7);
     }
 
     .btn-primary:hover {
-      box-shadow: 0 16px 34px rgba(79, 70, 229, 0.6);
+      box-shadow: 0 16px 34px rgba(155, 140, 255, 0.55);
       filter: brightness(1.05);
     }
 
@@ -165,12 +171,20 @@
     section {
       padding: 16px 14px 18px;
       border-radius: var(--radius-lg);
-      background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.18), rgba(15, 23, 42, 0.96));
-      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: linear-gradient(
+        145deg,
+        rgba(28, 28, 48, 0.9),
+        rgba(16, 16, 32, 0.95)
+      );
+      border: 1px solid rgba(80, 80, 120, 0.55);
     }
 
     section:nth-of-type(2n) {
-      background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.16), rgba(15, 23, 42, 0.96));
+      background: linear-gradient(
+        145deg,
+        rgba(32, 32, 56, 0.9),
+        rgba(18, 18, 36, 0.95)
+      );
     }
 
     section h2 {
@@ -184,22 +198,24 @@
     .section-body {
       font-size: 0.92rem;
       color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(155, 140, 255, 0.4);
+      padding-bottom: 1px;
+    }
+
+    a:hover {
+      border-bottom-color: rgba(155, 140, 255, 0.7);
     }
 
     .quick-links {
       display: flex;
       flex-direction: column;
       gap: 6px;
-    }
-
-    .quick-links a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    .quick-links a:hover {
-      text-decoration: underline;
     }
 
     .projects-grid {
@@ -216,14 +232,19 @@
 
     .project-card {
       border-radius: var(--radius-md);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98));
+      border: 1px solid rgba(80, 80, 120, 0.55);
+      background: linear-gradient(
+        145deg,
+        rgba(22, 22, 36, 0.92),
+        rgba(12, 12, 24, 0.96)
+      );
       padding: 10px 10px 12px;
     }
 
     .project-title {
       font-size: 0.95rem;
       margin-bottom: 4px;
+      color: var(--accent);
     }
 
     .project-desc {
@@ -234,7 +255,7 @@
 
     .project-tech {
       font-size: 0.8rem;
-      color: #9ca3af;
+      color: #b5b5d6;
     }
 
     .skills-row {
@@ -248,15 +269,15 @@
       font-size: 0.8rem;
       padding: 4px 9px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(75, 85, 99, 0.9);
+      background: rgba(20, 20, 35, 0.9);
+      border: 1px solid rgba(155, 140, 255, 0.35);
       color: var(--text-muted);
     }
 
     footer {
       margin-top: 22px;
       padding-top: 12px;
-      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      border-top: 1px solid rgba(80, 80, 120, 0.55);
       font-size: 0.8rem;
       color: var(--text-muted);
       display: flex;
@@ -266,6 +287,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <header>
@@ -274,28 +296,23 @@
           <h1>Sajana Wijesinghe</h1>
           <div class="role">SOFTWARE ENGINEER</div>
           <p class="tagline">
-            Full-stack engineer building production systems in Java, Spring Boot, and React — 
+            Full-stack engineer building production systems in Java, Spring Boot, and React —
             REST APIs, event pipelines, and the infrastructure behind them.
           </p>
+
           <div class="pill-row">
             <span class="pill">Boston, MA · Open to relocation (US & international)</span>
             <span class="pill">Java · Spring Boot · React · NextJS · TypeScript · Apache Kafka · PostgreSQL</span>
           </div>
         </div>
+
         <div class="links-row">
-          <!-- Replace these href values with your real links -->
-          <a class="btn btn-primary" href="https://stormking969.github.io/StormKing969/resume.pdf" target="_blank" rel="noopener">
-            <span class="icon">📄</span><span>Resume</span>
+          <a class="btn btn-primary" href="https://stormking969.github.io/StormKing969/resume.pdf" target="_blank">
+            📄 Resume
           </a>
-          <a class="btn" href="https://sajanaw.com" target="_blank" rel="noopener">
-            <span class="icon">🌐</span><span>Website</span>
-          </a>
-          <a class="btn" href="https://github.com/StormKing969" target="_blank" rel="noopener">
-            <span class="icon">🐙</span><span>GitHub</span>
-          </a>
-          <a class="btn" href="https://www.linkedin.com/in/sajana-wijesinghe" target="_blank" rel="noopener">
-            <span class="icon">🔗</span><span>LinkedIn</span>
-          </a>
+          <a class="btn" href="https://sajanaw.com" target="_blank">🌐 Website</a>
+          <a class="btn" href="https://github.com/StormKing969" target="_blank">🐙 GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/sajana-wijesinghe" target="_blank">🔗 LinkedIn</a>
         </div>
       </div>
     </header>
@@ -304,20 +321,23 @@
       <section>
         <h2>About</h2>
         <div class="section-body">
-          I spent three years at General Motors building backend systems for a platform 
-          used across 3,000+ dealerships — REST APIs, two Apache Kafka pipelines, and the 
-          RBAC layer that controls who can touch what. Along the way I helped move an 
-          18-repo codebase from Java 9 to 21 and turned a 10-second query into one that 
+          I spent three years at General Motors building backend systems for a platform
+          used across 3,000+ dealerships — REST APIs, two Apache Kafka pipelines, and the
+          RBAC layer that controls who can touch what. Along the way I helped move an
+          18-repo codebase from Java 9 to 21 and turned a 10-second query into one that
           runs in under 4.
-          
-          These days I co-run 
-          <a href="https://www.polariscovestudios.com" target="_blank" rel="noopener">
-            PolarisCove Studios
-          </a>, where I take client projects from a blank database through a deployed React 
-          front end — including the messy part where I inherit someone else's broken code 
-          and have to figure out why it stopped working. I'm working through the AWS SAA-C03 
-          right now to close the one real gap in my stack.
-          
+
+          <br><br>
+
+          These days I co-run
+          <a href="https://www.polariscovestudios.com" target="_blank">PolarisCove Studios</a>,
+          where I take client projects from a blank database through a deployed React
+          front end — including the messy part where I inherit someone else's broken code
+          and have to figure out why it stopped working. I'm working through the AWS
+          SAA-C03 right now to close the one real gap in my stack.
+
+          <br><br>
+
           I like owning things end to end. If that's useful to you, let's talk.
         </div>
       </section>
@@ -325,7 +345,6 @@
       <section>
         <h2>Quick Links</h2>
         <div class="section-body quick-links">
-          <!-- Replace with your actual links -->
           <div>Resume — <a href="https://stormking969.github.io/StormKing969/resume.pdf" target="_blank">View PDF</a></div>
           <div>Website — <a href="https://sajanaw.com" target="_blank">sajanaw.com</a></div>
           <div>GitHub — <a href="https://github.com/StormKing969" target="_blank">github.com/StormKing969</a></div>
@@ -340,8 +359,8 @@
           <div class="project-card">
             <div class="project-title">PolarisCove Studios — Client Work</div>
             <div class="project-desc">
-              Full-stack builds for outside clients: database schema through deployed React 
-              front end, plus ongoing hosting and DB administration. Includes the Mead 
+              Full-stack builds for outside clients: database schema through deployed React
+              front end, plus ongoing hosting and DB administration. Includes the Mead
               Memorial Chapel advocacy site (petition UI, newsletter signup, document upload).
             </div>
             <div class="project-tech">React • Spring Boot • REST APIs • Tailwind CSS</div>
@@ -350,7 +369,7 @@
           <div class="project-card">
             <div class="project-title">AI Resume Analyzer</div>
             <div class="project-desc">
-              Scores a resume against a job description and surfaces keyword and skills gaps, 
+              Scores a resume against a job description and surfaces keyword and skills gaps,
               built while running my own job search.
             </div>
             <div class="project-tech">Claude Opus API • React Router • TypeScript</div>
@@ -367,7 +386,7 @@
           <div class="project-card">
             <div class="project-title">Image Storage App</div>
             <div class="project-desc">
-              Upload and retrieval images using Appwrite APIs to handling backend storage and auth.
+              Upload and retrieve images using Appwrite APIs for backend storage and auth.
             </div>
             <div class="project-tech">Appwrite • React</div>
           </div>
