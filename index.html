@@ -1,1 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sajana Wijesinghe – Full‑Stack Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.15);
+      --text: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border: #1f2937;
+      --card-bg: #0b1020;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 16px 48px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(3, 7, 18, 0.98));
+      border-radius: 24px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: var(--shadow);
+      padding: 28px 22px 32px;
+      backdrop-filter: blur(18px);
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 32px 32px 40px;
+      }
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .top-row {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    @media (min-width: 640px) {
+      .top-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .name-role {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      letter-spacing: 0.03em;
+    }
+
+    .role {
+      font-size: 0.95rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .tagline {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 520px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+    }
+
+    .links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: all 0.18s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      border-color: transparent;
+      box-shadow: 0 12px 30px rgba(79, 70, 229, 0.45);
+    }
+
+    .btn span.icon {
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.7);
+      border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 16px 34px rgba(79, 70, 229, 0.6);
+      filter: brightness(1.05);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    section {
+      padding: 16px 14px 18px;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.18), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    section:nth-of-type(2n) {
+      background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.16), rgba(15, 23, 42, 0.96));
+    }
+
+    section h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .section-body {
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .quick-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .quick-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .quick-links a:hover {
+      text-decoration: underline;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .project-card {
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98));
+      padding: 10px 10px 12px;
+    }
+
+    .project-title {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .project-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .project-tech {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .skill-pill {
+      font-size: 0.8rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      color: var(--text-muted);
+    }
+
+    footer {
+      margin-top: 22px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="top-row">
+        <div class="name-role">
+          <h1>Sajana Wijesinghe</h1>
+          <div class="role">FULL‑STACK SOFTWARE ENGINEER</div>
+          <p class="tagline">
+            Building modern, reliable applications with React, TypeScript, Python, AWS, and clean architecture.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Remote / Hybrid – Boston, MA</span>
+            <span class="pill">React • TypeScript • Python • AWS</span>
+          </div>
+        </div>
+        <div class="links-row">
+          <!-- Replace these href values with your real links -->
+          <a class="btn btn-primary" href="https://your-resume-link.com" target="_blank" rel="noopener">
+            <span class="icon">📄</span><span>Resume</span>
+          </a>
+          <a class="btn" href="https://yourwebsite.com" target="_blank" rel="noopener">
+            <span class="icon">🌐</span><span>Website</span>
+          </a>
+          <a class="btn" href="https://github.com/yourusername" target="_blank" rel="noopener">
+            <span class="icon">🐙</span><span>GitHub</span>
+          </a>
+          <a class="btn" href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">
+            <span class="icon">🔗</span><span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <h2>About</h2>
+        <div class="section-body">
+          I'm a full‑stack engineer who enjoys owning projects end‑to‑end—from idea and architecture to deployment
+          and iteration. I care about clean code, thoughtful UX, and solving real problems for real people.
+          Currently building a timekeeping app that tracks employee punch‑ins/outs and syncs to Google Sheets
+          when online.
+        </div>
+      </section>
+
+      <section>
+        <h2>Quick Links</h2>
+        <div class="section-body quick-links">
+          <!-- Replace with your actual links -->
+          <div>Resume — <a href="https://your-resume-link.com" target="_blank">View PDF</a></div>
+          <div>Website — <a href="https://yourwebsite.com" target="_blank">yourwebsite.com</a></div>
+          <div>GitHub — <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></div>
+          <div>LinkedIn — <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></div>
+          <div>Email — <a href="mailto:hello@polariscovestudios.com">hello@polariscovestudios.com</a></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <div class="section-body projects-grid">
+          <div class="project-card">
+            <div class="project-title">Timekeeping App</div>
+            <div class="project-desc">
+              Offline‑first punch tracking for employees, syncing to Google Sheets when connected.
+            </div>
+            <div class="project-tech">React Native • TypeScript • Google Sheets API</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">Trip History App</div>
+            <div class="project-desc">
+              A personal travel timeline inspired by Flighty, showing trip history and routes.
+            </div>
+            <div class="project-tech">React • Node.js • Maps API</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">Delivery GPS Tracker</div>
+            <div class="project-desc">
+              Tracks truck delivery routes via GPS devices, exposing live and historical data.
+            </div>
+            <div class="project-tech">Python • FastAPI • IoT integration</div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-title">Alarm Clock Challenge</div>
+            <div class="project-desc">
+              An alarm that only stops when you take a photo of a specific household item.
+            </div>
+            <div class="project-tech">React Native • Camera API</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Skills</h2>
+        <div class="section-body">
+          <div class="skills-row">
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">TypeScript</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">AWS (Serverless)</span>
+            <span class="skill-pill">PostgreSQL / SQL</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">Expo / React Native</span>
+            <span class="skill-pill">REST APIs</span>
+            <span class="skill-pill">Git & CI/CD</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2026 Sajana Wijesinghe</div>
+      <div>Dark‑mode portfolio • Hosted on GitHub Pages</div>
+    </footer>
+  </div>
+</body>
+</html>
